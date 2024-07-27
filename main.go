@@ -42,4 +42,5 @@ func BindRoutes(server server.Server, router *mux.Router) {
 	api := router.PathPrefix("/api/v1").Subrouter()
 	api.Use(middleware.CheckAuthMiddleware(server))
 	router.HandleFunc("/home", handlers.HomeHandler(server)).Methods(http.MethodGet)
+	router.HandleFunc("/signup", handlers.SignupHandler(server)).Methods(http.MethodPost)
 }

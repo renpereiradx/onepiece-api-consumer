@@ -7,16 +7,17 @@ type Character struct {
 	Rname string `json:"rname"`
 }
 
-type CharacterDetail struct {
-	ID          string `json:"id"`
-	Age         string `json:"age"`
-	Birth       string `json:"birth"`
-	Affiliation string `json:"affiliation"`
-	Ocupation   string `json:"ocupation"`
-	Origin      string `json:"origin"`
-	Height      string `json:"height"`
-	CharacterID string `json:"character_id"`
-	DevilFruit  string `json:"devil_fruit"`
+type CharacterFull struct {
+	Character      Character       `json:"character"`
+	ID             string          `json:"id"`
+	Age            string          `json:"age"`
+	Birth          string          `json:"birth"`
+	Affiliation    string          `json:"affiliation"`
+	Ocupation      string          `json:"ocupation"`
+	Origin         string          `json:"origin"`
+	Height         string          `json:"height"`
+	DevilFruit     *DevilFruit     `json:"devil_fruit"`
+	CharacterImage *CharacterImage `json:"character_image"`
 }
 
 type CharacterImage struct {
